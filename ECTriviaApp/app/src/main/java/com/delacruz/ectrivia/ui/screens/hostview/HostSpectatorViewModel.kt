@@ -1,9 +1,9 @@
-package com.delacruz.ectrivia.ui.screens.hostview
+package com.ectrvia.ectrivia.ui.screens.hostview
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.delacruz.ectrivia.data.model.LeaderboardEntry
-import com.delacruz.ectrivia.data.repository.GameRepository
+import com.ectrvia.ectrivia.data.model.LeaderboardEntry
+import com.ectrvia.ectrivia.data.repository.GameRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

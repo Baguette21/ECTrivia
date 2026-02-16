@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.screens.leaderboard
+package com.ectrvia.ectrivia.ui.screens.leaderboard
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,11 +14,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.delacruz.ectrivia.data.model.PodiumEntry
-import com.delacruz.ectrivia.ui.components.ECTriviaButton
-import com.delacruz.ectrivia.ui.components.LeaderboardItem
-import com.delacruz.ectrivia.ui.components.LoadingIndicator
-import com.delacruz.ectrivia.ui.theme.*
+import com.ectrvia.ectrivia.data.model.PodiumEntry
+import com.ectrvia.ectrivia.ui.components.ECTriviaButton
+import com.ectrvia.ectrivia.ui.components.LeaderboardItem
+import com.ectrvia.ectrivia.ui.components.LoadingIndicator
+import com.ectrvia.ectrivia.ui.theme.*
 
 @Composable
 fun FinalLeaderboardScreen(

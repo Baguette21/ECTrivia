@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.screens.home
+package com.ectrvia.ectrivia.ui.screens.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -9,11 +9,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.delacruz.ectrivia.ui.components.ECTriviaButton
-import com.delacruz.ectrivia.ui.theme.ECTriviaBackground
-import com.delacruz.ectrivia.ui.theme.ECTriviaPrimary
-import com.delacruz.ectrivia.ui.theme.TextPrimary
-import com.delacruz.ectrivia.ui.theme.TextSecondary
+import com.ectrvia.ectrivia.ui.components.ECTriviaButton
+import com.ectrvia.ectrivia.ui.theme.ECTriviaBackground
+import com.ectrvia.ectrivia.ui.theme.ECTriviaPrimary
+import com.ectrvia.ectrivia.ui.theme.TextPrimary
+import com.ectrvia.ectrivia.ui.theme.TextSecondary
 
 @Composable
 fun HomeScreen(

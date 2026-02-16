@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.util
+package com.ectrvia.ectrivia.util
 
 import retrofit2.Response
 

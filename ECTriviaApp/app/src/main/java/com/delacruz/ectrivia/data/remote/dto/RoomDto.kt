@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.data.remote.dto
+package com.ectrvia.ectrivia.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 

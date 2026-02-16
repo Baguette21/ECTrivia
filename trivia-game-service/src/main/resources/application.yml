@@ -27,5 +27,5 @@ server:
 
 logging:
   level:
-    com.delacruz.trivia: DEBUG
+    com.ectrvia.trivia: DEBUG
     org.springframework.kafka: INFO

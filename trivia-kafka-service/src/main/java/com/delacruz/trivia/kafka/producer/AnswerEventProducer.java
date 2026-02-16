@@ -1,7 +1,7 @@
-package com.delacruz.trivia.kafka.producer;
+package com.ectrvia.trivia.kafka.producer;
 
-import com.delacruz.trivia.kafka.KafkaTopicConfig;
-import com.delacruz.trivia.kafka.event.AnswerSubmittedEvent;
+import com.ectrvia.trivia.kafka.KafkaTopicConfig;
+import com.ectrvia.trivia.kafka.event.AnswerSubmittedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

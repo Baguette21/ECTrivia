@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.screens.lobby
+package com.ectrvia.ectrivia.ui.screens.lobby
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -15,12 +15,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.delacruz.ectrivia.data.model.Player
-import com.delacruz.ectrivia.ui.components.ECTriviaButton
-import com.delacruz.ectrivia.ui.components.ErrorDialog
-import com.delacruz.ectrivia.ui.components.LoadingIndicator
-import com.delacruz.ectrivia.ui.components.PlayerAvatar
-import com.delacruz.ectrivia.ui.theme.*
+import com.ectrvia.ectrivia.data.model.Player
+import com.ectrvia.ectrivia.ui.components.ECTriviaButton
+import com.ectrvia.ectrivia.ui.components.ErrorDialog
+import com.ectrvia.ectrivia.ui.components.LoadingIndicator
+import com.ectrvia.ectrivia.ui.components.PlayerAvatar
+import com.ectrvia.ectrivia.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

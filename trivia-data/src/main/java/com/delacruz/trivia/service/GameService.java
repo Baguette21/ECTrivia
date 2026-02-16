@@ -1,7 +1,7 @@
-package com.delacruz.trivia.service;
+package com.ectrvia.trivia.service;
 
-import com.delacruz.trivia.model.GameState;
-import com.delacruz.trivia.model.LeaderboardEntry;
+import com.ectrvia.trivia.model.GameState;
+import com.ectrvia.trivia.model.LeaderboardEntry;
 
 import java.util.List;
 

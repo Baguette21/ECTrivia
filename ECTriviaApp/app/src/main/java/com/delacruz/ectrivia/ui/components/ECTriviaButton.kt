@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.components
+package com.ectrvia.ectrivia.ui.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -11,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.delacruz.ectrivia.ui.theme.ECTriviaPrimary
-import com.delacruz.ectrivia.ui.theme.ECTriviaSecondary
+import com.ectrvia.ectrivia.ui.theme.ECTriviaPrimary
+import com.ectrvia.ectrivia.ui.theme.ECTriviaSecondary
 
 @Composable
 fun ECTriviaButton(

@@ -1,11 +1,11 @@
-package com.delacruz.ectrivia.ui.components
+package com.ectrvia.ectrivia.ui.components
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import com.delacruz.ectrivia.ui.theme.ECTriviaPrimary
-import com.delacruz.ectrivia.ui.theme.TextPrimary
+import com.ectrvia.ectrivia.ui.theme.ECTriviaPrimary
+import com.ectrvia.ectrivia.ui.theme.TextPrimary
 
 @Composable
 fun ErrorDialog(

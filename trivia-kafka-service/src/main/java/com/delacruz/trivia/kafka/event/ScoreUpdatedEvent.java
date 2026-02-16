@@ -1,4 +1,4 @@
-package com.delacruz.trivia.kafka.event;
+package com.ectrvia.trivia.kafka.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

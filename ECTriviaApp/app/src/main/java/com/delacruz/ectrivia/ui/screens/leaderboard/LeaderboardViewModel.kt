@@ -1,11 +1,11 @@
-package com.delacruz.ectrivia.ui.screens.leaderboard
+package com.ectrvia.ectrivia.ui.screens.leaderboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.delacruz.ectrivia.data.model.LeaderboardEntry
-import com.delacruz.ectrivia.data.model.PodiumEntry
-import com.delacruz.ectrivia.data.repository.GameRepository
-import com.delacruz.ectrivia.util.NetworkResult
+import com.ectrvia.ectrivia.data.model.LeaderboardEntry
+import com.ectrvia.ectrivia.data.model.PodiumEntry
+import com.ectrvia.ectrivia.data.repository.GameRepository
+import com.ectrvia.ectrivia.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.components
+package com.ectrvia.ectrivia.ui.components
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
@@ -11,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import com.delacruz.ectrivia.ui.theme.*
+import com.ectrvia.ectrivia.ui.theme.*
 
 @Composable
 fun CountdownTimer(

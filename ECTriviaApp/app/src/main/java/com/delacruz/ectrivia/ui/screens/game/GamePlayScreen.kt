@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.screens.game
+package com.ectrvia.ectrivia.ui.screens.game
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -13,10 +13,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.delacruz.ectrivia.data.model.Answer
-import com.delacruz.ectrivia.ui.components.CountdownTimer
-import com.delacruz.ectrivia.ui.components.LoadingIndicator
-import com.delacruz.ectrivia.ui.theme.*
+import com.ectrvia.ectrivia.data.model.Answer
+import com.ectrvia.ectrivia.ui.components.CountdownTimer
+import com.ectrvia.ectrivia.ui.components.LoadingIndicator
+import com.ectrvia.ectrivia.ui.theme.*
 
 @Composable
 fun GamePlayScreen(

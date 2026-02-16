@@ -1,10 +1,10 @@
-package com.delacruz.ectrivia.data.repository
+package com.ectrvia.ectrivia.data.repository
 
-import com.delacruz.ectrivia.data.model.*
-import com.delacruz.ectrivia.data.remote.api.TriviaApiService
-import com.delacruz.ectrivia.data.remote.dto.*
-import com.delacruz.ectrivia.util.NetworkResult
-import com.delacruz.ectrivia.util.safeApiCall
+import com.ectrvia.ectrivia.data.model.*
+import com.ectrvia.ectrivia.data.remote.api.TriviaApiService
+import com.ectrvia.ectrivia.data.remote.dto.*
+import com.ectrvia.ectrivia.util.NetworkResult
+import com.ectrvia.ectrivia.util.safeApiCall
 import javax.inject.Inject
 import javax.inject.Singleton
 

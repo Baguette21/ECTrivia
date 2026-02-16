@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.navigation
+package com.ectrvia.ectrivia.ui.navigation
 
 sealed class Screen(val route: String) {
     data object Home : Screen("home")

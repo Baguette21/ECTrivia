@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.components
+package com.ectrvia.ectrivia.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -13,10 +13,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.delacruz.ectrivia.ui.theme.AnswerBlue
-import com.delacruz.ectrivia.ui.theme.AnswerGreen
-import com.delacruz.ectrivia.ui.theme.AnswerRed
-import com.delacruz.ectrivia.ui.theme.AnswerYellow
+import com.ectrvia.ectrivia.ui.theme.AnswerBlue
+import com.ectrvia.ectrivia.ui.theme.AnswerGreen
+import com.ectrvia.ectrivia.ui.theme.AnswerRed
+import com.ectrvia.ectrivia.ui.theme.AnswerYellow
 
 @Composable
 fun PlayerAvatar(

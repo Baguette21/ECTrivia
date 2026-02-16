@@ -1,4 +1,4 @@
-package com.delacruz.trivia.websocket;
+package com.ectrvia.trivia.websocket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;

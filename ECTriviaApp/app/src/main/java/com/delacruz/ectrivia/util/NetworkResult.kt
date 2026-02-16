@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.util
+package com.ectrvia.ectrivia.util
 
 sealed class NetworkResult<out T> {
     data class Success<T>(val data: T) : NetworkResult<T>()

@@ -1,9 +1,9 @@
-package com.delacruz.trivia.controller;
+package com.ectrvia.trivia.controller;
 
-import com.delacruz.trivia.model.Category;
-import com.delacruz.trivia.model.Question;
-import com.delacruz.trivia.service.CategoryService;
-import com.delacruz.trivia.service.QuestionService;
+import com.ectrvia.trivia.model.Category;
+import com.ectrvia.trivia.model.Question;
+import com.ectrvia.trivia.service.CategoryService;
+import com.ectrvia.trivia.service.QuestionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

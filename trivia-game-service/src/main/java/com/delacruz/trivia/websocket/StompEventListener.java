@@ -1,4 +1,4 @@
-package com.delacruz.trivia.websocket;
+package com.ectrvia.trivia.websocket;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.components
+package com.ectrvia.ectrivia.ui.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,10 +14,10 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.delacruz.ectrivia.ui.theme.ECTriviaPrimary
-import com.delacruz.ectrivia.ui.theme.ECTriviaSurfaceVariant
-import com.delacruz.ectrivia.ui.theme.TextPrimary
-import com.delacruz.ectrivia.ui.theme.TextSecondary
+import com.ectrvia.ectrivia.ui.theme.ECTriviaPrimary
+import com.ectrvia.ectrivia.ui.theme.ECTriviaSurfaceVariant
+import com.ectrvia.ectrivia.ui.theme.TextPrimary
+import com.ectrvia.ectrivia.ui.theme.TextSecondary
 
 @Composable
 fun ECTriviaTextField(

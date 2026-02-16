@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.screens.createroom
+package com.ectrvia.ectrivia.ui.screens.createroom
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,10 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.delacruz.ectrivia.data.model.Category
-import com.delacruz.ectrivia.ui.components.ErrorDialog
-import com.delacruz.ectrivia.ui.components.LoadingIndicator
-import com.delacruz.ectrivia.ui.theme.*
+import com.ectrvia.ectrivia.data.model.Category
+import com.ectrvia.ectrivia.ui.components.ErrorDialog
+import com.ectrvia.ectrivia.ui.components.LoadingIndicator
+import com.ectrvia.ectrivia.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,12 +1,12 @@
-package com.delacruz.ectrivia.ui.screens.game
+package com.ectrvia.ectrivia.ui.screens.game
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.delacruz.ectrivia.data.model.Answer
-import com.delacruz.ectrivia.data.model.Question
-import com.delacruz.ectrivia.data.remote.dto.GameStateDto
-import com.delacruz.ectrivia.data.repository.GameRepository
-import com.delacruz.ectrivia.util.NetworkResult
+import com.ectrvia.ectrivia.data.model.Answer
+import com.ectrvia.ectrivia.data.model.Question
+import com.ectrvia.ectrivia.data.remote.dto.GameStateDto
+import com.ectrvia.ectrivia.data.repository.GameRepository
+import com.ectrvia.ectrivia.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

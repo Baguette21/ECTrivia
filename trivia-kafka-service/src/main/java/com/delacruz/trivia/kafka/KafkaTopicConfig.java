@@ -1,4 +1,4 @@
-package com.delacruz.trivia.kafka;
+package com.ectrvia.trivia.kafka;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;

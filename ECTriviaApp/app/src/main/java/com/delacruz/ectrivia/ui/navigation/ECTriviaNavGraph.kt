@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.navigation
+package com.ectrvia.ectrivia.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
@@ -6,19 +6,19 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.delacruz.ectrivia.ui.screens.createroom.CreateRoomScreen
-import com.delacruz.ectrivia.ui.screens.createroom.CategoryManagerScreen
-import com.delacruz.ectrivia.ui.screens.createroom.QuestionEditorScreen
-import com.delacruz.ectrivia.ui.screens.createroom.QuestionListScreen
-import com.delacruz.ectrivia.ui.screens.createroom.ThemeSelectorScreen
-import com.delacruz.ectrivia.ui.screens.game.GamePlayScreen
-import com.delacruz.ectrivia.ui.screens.home.HomeScreen
-import com.delacruz.ectrivia.ui.screens.hostview.HostSpectatorScreen
-import com.delacruz.ectrivia.ui.screens.joinroom.JoinRoomScreen
-import com.delacruz.ectrivia.ui.screens.joinroom.NicknameScreen
-import com.delacruz.ectrivia.ui.screens.leaderboard.FinalLeaderboardScreen
-import com.delacruz.ectrivia.ui.screens.lobby.LobbyScreen
-import com.delacruz.ectrivia.ui.screens.results.QuestionResultScreen
+import com.ectrvia.ectrivia.ui.screens.createroom.CreateRoomScreen
+import com.ectrvia.ectrivia.ui.screens.createroom.CategoryManagerScreen
+import com.ectrvia.ectrivia.ui.screens.createroom.QuestionEditorScreen
+import com.ectrvia.ectrivia.ui.screens.createroom.QuestionListScreen
+import com.ectrvia.ectrivia.ui.screens.createroom.ThemeSelectorScreen
+import com.ectrvia.ectrivia.ui.screens.game.GamePlayScreen
+import com.ectrvia.ectrivia.ui.screens.home.HomeScreen
+import com.ectrvia.ectrivia.ui.screens.hostview.HostSpectatorScreen
+import com.ectrvia.ectrivia.ui.screens.joinroom.JoinRoomScreen
+import com.ectrvia.ectrivia.ui.screens.joinroom.NicknameScreen
+import com.ectrvia.ectrivia.ui.screens.leaderboard.FinalLeaderboardScreen
+import com.ectrvia.ectrivia.ui.screens.lobby.LobbyScreen
+import com.ectrvia.ectrivia.ui.screens.results.QuestionResultScreen
 
 @Composable
 fun ECTriviaNavGraph() {

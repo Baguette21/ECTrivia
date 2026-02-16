@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.delacruz</groupId>
+        <groupId>com.ectrvia</groupId>
         <artifactId>ectrivia-platform</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -17,7 +17,7 @@
     <dependencies>
         <!-- Trivia Data Module -->
         <dependency>
-            <groupId>com.delacruz</groupId>
+            <groupId>com.ectrvia</groupId>
             <artifactId>trivia-data</artifactId>
         </dependency>
 

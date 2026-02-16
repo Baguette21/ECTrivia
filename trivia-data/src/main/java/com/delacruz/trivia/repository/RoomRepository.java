@@ -1,6 +1,6 @@
-package com.delacruz.trivia.repository;
+package com.ectrvia.trivia.repository;
 
-import com.delacruz.trivia.entity.RoomData;
+import com.ectrvia.trivia.entity.RoomData;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

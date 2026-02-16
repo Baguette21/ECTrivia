@@ -1,8 +1,8 @@
-package com.delacruz.trivia.kafka.consumer;
+package com.ectrvia.trivia.kafka.consumer;
 
-import com.delacruz.trivia.kafka.KafkaTopicConfig;
-import com.delacruz.trivia.kafka.event.ScoreUpdatedEvent;
-import com.delacruz.trivia.websocket.GameWebSocketHandler;
+import com.ectrvia.trivia.kafka.KafkaTopicConfig;
+import com.ectrvia.trivia.kafka.event.ScoreUpdatedEvent;
+import com.ectrvia.trivia.websocket.GameWebSocketHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

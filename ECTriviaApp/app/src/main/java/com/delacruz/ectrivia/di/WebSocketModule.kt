@@ -1,6 +1,6 @@
-package com.delacruz.ectrivia.di
+package com.ectrvia.ectrivia.di
 
-import com.delacruz.ectrivia.data.remote.websocket.StompService
+import com.ectrvia.ectrivia.data.remote.websocket.StompService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

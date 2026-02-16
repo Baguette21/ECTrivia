@@ -1,12 +1,12 @@
-package com.delacruz.trivia.controller;
+package com.ectrvia.trivia.controller;
 
-import com.delacruz.trivia.entity.PlayerData;
-import com.delacruz.trivia.model.GameState;
-import com.delacruz.trivia.model.LeaderboardEntry;
-import com.delacruz.trivia.model.PlayerAnswer;
-import com.delacruz.trivia.repository.PlayerRepository;
-import com.delacruz.trivia.service.GameService;
-import com.delacruz.trivia.service.ScoreService;
+import com.ectrvia.trivia.entity.PlayerData;
+import com.ectrvia.trivia.model.GameState;
+import com.ectrvia.trivia.model.LeaderboardEntry;
+import com.ectrvia.trivia.model.PlayerAnswer;
+import com.ectrvia.trivia.repository.PlayerRepository;
+import com.ectrvia.trivia.service.GameService;
+import com.ectrvia.trivia.service.ScoreService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

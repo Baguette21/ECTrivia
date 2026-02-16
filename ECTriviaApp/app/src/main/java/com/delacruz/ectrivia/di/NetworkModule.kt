@@ -1,7 +1,7 @@
-package com.delacruz.ectrivia.di
+package com.ectrvia.ectrivia.di
 
-import com.delacruz.ectrivia.BuildConfig
-import com.delacruz.ectrivia.data.remote.api.TriviaApiService
+import com.ectrvia.ectrivia.BuildConfig
+import com.ectrvia.ectrivia.data.remote.api.TriviaApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

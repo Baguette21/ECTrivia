@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.data.model
+package com.ectrvia.ectrivia.data.model
 
 data class Player(
     val id: Long,

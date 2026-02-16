@@ -1,11 +1,11 @@
-package com.delacruz.ectrivia.ui.screens.lobby
+package com.ectrvia.ectrivia.ui.screens.lobby
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.delacruz.ectrivia.data.model.Player
-import com.delacruz.ectrivia.data.repository.GameRepository
-import com.delacruz.ectrivia.data.repository.RoomRepository
-import com.delacruz.ectrivia.util.NetworkResult
+import com.ectrvia.ectrivia.data.model.Player
+import com.ectrvia.ectrivia.data.repository.GameRepository
+import com.ectrvia.ectrivia.data.repository.RoomRepository
+import com.ectrvia.ectrivia.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

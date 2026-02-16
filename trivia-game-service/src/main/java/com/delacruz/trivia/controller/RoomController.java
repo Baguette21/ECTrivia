@@ -1,8 +1,8 @@
-package com.delacruz.trivia.controller;
+package com.ectrvia.trivia.controller;
 
-import com.delacruz.trivia.model.Player;
-import com.delacruz.trivia.model.Room;
-import com.delacruz.trivia.service.RoomService;
+import com.ectrvia.trivia.model.Player;
+import com.ectrvia.trivia.model.Room;
+import com.ectrvia.trivia.service.RoomService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

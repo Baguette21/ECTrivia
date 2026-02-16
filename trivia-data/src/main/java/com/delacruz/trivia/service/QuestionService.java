@@ -1,6 +1,6 @@
-package com.delacruz.trivia.service;
+package com.ectrvia.trivia.service;
 
-import com.delacruz.trivia.model.Question;
+import com.ectrvia.trivia.model.Question;
 
 import java.util.List;
 

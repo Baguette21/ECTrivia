@@ -1,4 +1,4 @@
-package com.delacruz.trivia.websocket;
+package com.ectrvia.trivia.websocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

@@ -1,6 +1,6 @@
-package com.delacruz.ectrivia.data.remote.api
+package com.ectrvia.ectrivia.data.remote.api
 
-import com.delacruz.ectrivia.data.remote.dto.*
+import com.ectrvia.ectrivia.data.remote.dto.*
 import retrofit2.Response
 import retrofit2.http.*
 

@@ -1,11 +1,11 @@
-package com.delacruz.trivia.config;
+package com.ectrvia.trivia.config;
 
-import com.delacruz.trivia.entity.AnswerData;
-import com.delacruz.trivia.entity.CategoryData;
-import com.delacruz.trivia.entity.QuestionData;
-import com.delacruz.trivia.repository.AnswerRepository;
-import com.delacruz.trivia.repository.CategoryRepository;
-import com.delacruz.trivia.repository.QuestionRepository;
+import com.ectrvia.trivia.entity.AnswerData;
+import com.ectrvia.trivia.entity.CategoryData;
+import com.ectrvia.trivia.entity.QuestionData;
+import com.ectrvia.trivia.repository.AnswerRepository;
+import com.ectrvia.trivia.repository.CategoryRepository;
+import com.ectrvia.trivia.repository.QuestionRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

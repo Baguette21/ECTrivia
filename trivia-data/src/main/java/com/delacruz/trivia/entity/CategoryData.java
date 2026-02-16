@@ -1,4 +1,4 @@
-package com.delacruz.trivia.entity;
+package com.ectrvia.trivia.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

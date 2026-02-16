@@ -1,10 +1,10 @@
-package com.delacruz.trivia.serviceimpl;
+package com.ectrvia.trivia.serviceimpl;
 
-import com.delacruz.trivia.entity.CategoryData;
-import com.delacruz.trivia.model.Category;
-import com.delacruz.trivia.repository.CategoryRepository;
-import com.delacruz.trivia.service.CategoryService;
-import com.delacruz.trivia.transform.TransformCategoryService;
+import com.ectrvia.trivia.entity.CategoryData;
+import com.ectrvia.trivia.model.Category;
+import com.ectrvia.trivia.repository.CategoryRepository;
+import com.ectrvia.trivia.service.CategoryService;
+import com.ectrvia.trivia.transform.TransformCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

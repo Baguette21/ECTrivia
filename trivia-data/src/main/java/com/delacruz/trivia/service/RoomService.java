@@ -1,7 +1,7 @@
-package com.delacruz.trivia.service;
+package com.ectrvia.trivia.service;
 
-import com.delacruz.trivia.model.Room;
-import com.delacruz.trivia.model.Player;
+import com.ectrvia.trivia.model.Room;
+import com.ectrvia.trivia.model.Player;
 
 public interface RoomService {
     Room createRoom(Long categoryId, Boolean isThemeBased, Integer timerSeconds, Integer maxPlayers);

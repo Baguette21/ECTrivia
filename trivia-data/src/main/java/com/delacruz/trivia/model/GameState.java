@@ -1,4 +1,4 @@
-package com.delacruz.trivia.model;
+package com.ectrvia.trivia.model;
 
 import lombok.Data;
 import java.util.List;

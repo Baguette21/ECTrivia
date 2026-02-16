@@ -1,8 +1,8 @@
-package com.delacruz.trivia.kafka;
+package com.ectrvia.trivia.kafka;
 
-import com.delacruz.trivia.kafka.event.AnswerSubmittedEvent;
-import com.delacruz.trivia.kafka.event.GameStateEvent;
-import com.delacruz.trivia.kafka.event.ScoreUpdatedEvent;
+import com.ectrvia.trivia.kafka.event.AnswerSubmittedEvent;
+import com.ectrvia.trivia.kafka.event.GameStateEvent;
+import com.ectrvia.trivia.kafka.event.ScoreUpdatedEvent;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

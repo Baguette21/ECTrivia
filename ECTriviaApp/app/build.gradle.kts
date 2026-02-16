@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.delacruz.ectrivia"
+    namespace = "com.ectrvia.ectrivia"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.delacruz.ectrivia"
+        applicationId = "com.ectrvia.ectrivia"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

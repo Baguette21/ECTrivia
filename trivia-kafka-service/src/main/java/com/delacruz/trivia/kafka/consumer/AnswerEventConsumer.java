@@ -1,6 +1,6 @@
-package com.delacruz.trivia.kafka.consumer;
+package com.ectrvia.trivia.kafka.consumer;
 
-import com.delacruz.trivia.kafka.event.AnswerSubmittedEvent;
+import com.ectrvia.trivia.kafka.event.AnswerSubmittedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

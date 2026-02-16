@@ -1,7 +1,7 @@
-package com.delacruz.trivia.transform;
+package com.ectrvia.trivia.transform;
 
-import com.delacruz.trivia.entity.RoomData;
-import com.delacruz.trivia.model.Room;
+import com.ectrvia.trivia.entity.RoomData;
+import com.ectrvia.trivia.model.Room;
 
 public interface TransformRoomService {
     Room transform(RoomData roomData);

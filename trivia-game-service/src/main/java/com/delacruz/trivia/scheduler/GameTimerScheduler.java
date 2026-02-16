@@ -1,15 +1,15 @@
-package com.delacruz.trivia.scheduler;
+package com.ectrvia.trivia.scheduler;
 
-import com.delacruz.trivia.entity.QuestionData;
-import com.delacruz.trivia.entity.RoomData;
-import com.delacruz.trivia.kafka.event.GameStateEvent;
-import com.delacruz.trivia.kafka.producer.GameEventProducer;
-import com.delacruz.trivia.model.Question;
-import com.delacruz.trivia.repository.QuestionRepository;
-import com.delacruz.trivia.repository.RoomRepository;
-import com.delacruz.trivia.service.GameService;
-import com.delacruz.trivia.transform.TransformQuestionService;
-import com.delacruz.trivia.websocket.GameWebSocketHandler;
+import com.ectrvia.trivia.entity.QuestionData;
+import com.ectrvia.trivia.entity.RoomData;
+import com.ectrvia.trivia.kafka.event.GameStateEvent;
+import com.ectrvia.trivia.kafka.producer.GameEventProducer;
+import com.ectrvia.trivia.model.Question;
+import com.ectrvia.trivia.repository.QuestionRepository;
+import com.ectrvia.trivia.repository.RoomRepository;
+import com.ectrvia.trivia.service.GameService;
+import com.ectrvia.trivia.transform.TransformQuestionService;
+import com.ectrvia.trivia.websocket.GameWebSocketHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ public class GameTimerScheduler {
     private QuestionRepository questionRepository;
 
     @Autowired
-    private com.delacruz.trivia.repository.AnswerRepository answerRepository;
+    private com.ectrvia.trivia.repository.AnswerRepository answerRepository;
 
     @Autowired
     private GameService gameService;

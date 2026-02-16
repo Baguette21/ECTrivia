@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.screens.hostview
+package com.ectrvia.ectrivia.ui.screens.hostview
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,10 +14,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.delacruz.ectrivia.ui.components.CountdownTimer
-import com.delacruz.ectrivia.ui.components.LeaderboardItem
-import com.delacruz.ectrivia.ui.components.LoadingIndicator
-import com.delacruz.ectrivia.ui.theme.*
+import com.ectrvia.ectrivia.ui.components.CountdownTimer
+import com.ectrvia.ectrivia.ui.components.LeaderboardItem
+import com.ectrvia.ectrivia.ui.components.LoadingIndicator
+import com.ectrvia.ectrivia.ui.theme.*
 
 @Composable
 fun HostSpectatorScreen(

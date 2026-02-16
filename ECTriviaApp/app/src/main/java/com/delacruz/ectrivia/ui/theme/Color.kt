@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.theme
+package com.ectrvia.ectrivia.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

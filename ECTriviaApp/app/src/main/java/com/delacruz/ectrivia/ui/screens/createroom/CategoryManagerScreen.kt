@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.screens.createroom
+package com.ectrvia.ectrivia.ui.screens.createroom
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -45,20 +45,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.delacruz.ectrivia.ui.components.ECTriviaButton
-import com.delacruz.ectrivia.ui.components.ECTriviaTextField
-import com.delacruz.ectrivia.ui.components.ErrorDialog
-import com.delacruz.ectrivia.ui.components.LoadingIndicator
-import com.delacruz.ectrivia.ui.theme.AnswerBlue
-import com.delacruz.ectrivia.ui.theme.AnswerGreen
-import com.delacruz.ectrivia.ui.theme.AnswerRed
-import com.delacruz.ectrivia.ui.theme.AnswerYellow
-import com.delacruz.ectrivia.ui.theme.ECTriviaBackground
-import com.delacruz.ectrivia.ui.theme.ECTriviaPrimary
-import com.delacruz.ectrivia.ui.theme.ECTriviaSurfaceVariant
-import com.delacruz.ectrivia.ui.theme.IncorrectRed
-import com.delacruz.ectrivia.ui.theme.TextPrimary
-import com.delacruz.ectrivia.ui.theme.TextSecondary
+import com.ectrvia.ectrivia.ui.components.ECTriviaButton
+import com.ectrvia.ectrivia.ui.components.ECTriviaTextField
+import com.ectrvia.ectrivia.ui.components.ErrorDialog
+import com.ectrvia.ectrivia.ui.components.LoadingIndicator
+import com.ectrvia.ectrivia.ui.theme.AnswerBlue
+import com.ectrvia.ectrivia.ui.theme.AnswerGreen
+import com.ectrvia.ectrivia.ui.theme.AnswerRed
+import com.ectrvia.ectrivia.ui.theme.AnswerYellow
+import com.ectrvia.ectrivia.ui.theme.ECTriviaBackground
+import com.ectrvia.ectrivia.ui.theme.ECTriviaPrimary
+import com.ectrvia.ectrivia.ui.theme.ECTriviaSurfaceVariant
+import com.ectrvia.ectrivia.ui.theme.IncorrectRed
+import com.ectrvia.ectrivia.ui.theme.TextPrimary
+import com.ectrvia.ectrivia.ui.theme.TextSecondary
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

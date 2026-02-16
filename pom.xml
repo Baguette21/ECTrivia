@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.delacruz</groupId>
+    <groupId>com.ectrvia</groupId>
     <artifactId>ectrivia-platform</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -63,12 +63,12 @@
         <dependencies>
             <!-- Internal modules -->
             <dependency>
-                <groupId>com.delacruz</groupId>
+                <groupId>com.ectrvia</groupId>
                 <artifactId>trivia-data</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.delacruz</groupId>
+                <groupId>com.ectrvia</groupId>
                 <artifactId>trivia-kafka-service</artifactId>
                 <version>${project.version}</version>
             </dependency>

@@ -1,10 +1,10 @@
-package com.delacruz.ectrivia.ui.screens.createroom
+package com.ectrvia.ectrivia.ui.screens.createroom
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.delacruz.ectrivia.data.model.Question
-import com.delacruz.ectrivia.data.repository.QuestionRepository
-import com.delacruz.ectrivia.util.NetworkResult
+import com.ectrvia.ectrivia.data.model.Question
+import com.ectrvia.ectrivia.data.repository.QuestionRepository
+import com.ectrvia.ectrivia.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,10 +1,10 @@
-package com.delacruz.ectrivia.data.remote.websocket
+package com.ectrvia.ectrivia.data.remote.websocket
 
-import com.delacruz.ectrivia.BuildConfig
-import com.delacruz.ectrivia.data.remote.dto.GameStateDto
-import com.delacruz.ectrivia.data.remote.dto.LeaderboardEntryDto
-import com.delacruz.ectrivia.data.remote.dto.PlayerEventDto
-import com.delacruz.ectrivia.data.remote.dto.ScoreUpdateDto
+import com.ectrvia.ectrivia.BuildConfig
+import com.ectrvia.ectrivia.data.remote.dto.GameStateDto
+import com.ectrvia.ectrivia.data.remote.dto.LeaderboardEntryDto
+import com.ectrvia.ectrivia.data.remote.dto.PlayerEventDto
+import com.ectrvia.ectrivia.data.remote.dto.ScoreUpdateDto
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

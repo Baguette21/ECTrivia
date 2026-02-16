@@ -1,7 +1,7 @@
-package com.delacruz.trivia.transform;
+package com.ectrvia.trivia.transform;
 
-import com.delacruz.trivia.entity.QuestionData;
-import com.delacruz.trivia.model.Question;
+import com.ectrvia.trivia.entity.QuestionData;
+import com.ectrvia.trivia.model.Question;
 
 public interface TransformQuestionService {
     Question transform(QuestionData questionData);

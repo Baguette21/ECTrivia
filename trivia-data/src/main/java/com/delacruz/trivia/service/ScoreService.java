@@ -1,6 +1,6 @@
-package com.delacruz.trivia.service;
+package com.ectrvia.trivia.service;
 
-import com.delacruz.trivia.model.PlayerAnswer;
+import com.ectrvia.trivia.model.PlayerAnswer;
 
 public interface ScoreService {
     PlayerAnswer submitAnswer(String roomCode, Long playerId, Long questionId, Integer selectedAnswerIndex, Integer answerTimeMs);

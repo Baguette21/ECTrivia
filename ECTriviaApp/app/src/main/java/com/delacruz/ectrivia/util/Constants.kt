@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.util
+package com.ectrvia.ectrivia.util
 
 object Constants {
     const val ROOM_CODE_LENGTH = 6

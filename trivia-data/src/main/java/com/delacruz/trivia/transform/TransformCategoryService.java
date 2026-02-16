@@ -1,7 +1,7 @@
-package com.delacruz.trivia.transform;
+package com.ectrvia.trivia.transform;
 
-import com.delacruz.trivia.entity.CategoryData;
-import com.delacruz.trivia.model.Category;
+import com.ectrvia.trivia.entity.CategoryData;
+import com.ectrvia.trivia.model.Category;
 
 public interface TransformCategoryService {
     Category transform(CategoryData categoryData);

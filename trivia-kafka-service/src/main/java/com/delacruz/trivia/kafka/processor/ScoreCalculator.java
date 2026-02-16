@@ -1,4 +1,4 @@
-package com.delacruz.trivia.kafka.processor;
+package com.ectrvia.trivia.kafka.processor;
 
 import org.springframework.stereotype.Component;
 

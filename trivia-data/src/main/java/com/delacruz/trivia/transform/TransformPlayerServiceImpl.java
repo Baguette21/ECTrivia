@@ -1,7 +1,7 @@
-package com.delacruz.trivia.transform;
+package com.ectrvia.trivia.transform;
 
-import com.delacruz.trivia.entity.PlayerData;
-import com.delacruz.trivia.model.Player;
+import com.ectrvia.trivia.entity.PlayerData;
+import com.ectrvia.trivia.model.Player;
 import org.springframework.stereotype.Service;
 
 @Service

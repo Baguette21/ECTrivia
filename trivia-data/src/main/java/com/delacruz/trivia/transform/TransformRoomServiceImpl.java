@@ -1,9 +1,9 @@
-package com.delacruz.trivia.transform;
+package com.ectrvia.trivia.transform;
 
-import com.delacruz.trivia.entity.RoomData;
-import com.delacruz.trivia.model.Room;
-import com.delacruz.trivia.repository.PlayerRepository;
-import com.delacruz.trivia.repository.QuestionRepository;
+import com.ectrvia.trivia.entity.RoomData;
+import com.ectrvia.trivia.model.Room;
+import com.ectrvia.trivia.repository.PlayerRepository;
+import com.ectrvia.trivia.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.stream.Collectors;

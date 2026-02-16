@@ -1,10 +1,10 @@
-package com.delacruz.trivia.transform;
+package com.ectrvia.trivia.transform;
 
-import com.delacruz.trivia.entity.AnswerData;
-import com.delacruz.trivia.entity.QuestionData;
-import com.delacruz.trivia.model.Answer;
-import com.delacruz.trivia.model.Question;
-import com.delacruz.trivia.repository.AnswerRepository;
+import com.ectrvia.trivia.entity.AnswerData;
+import com.ectrvia.trivia.entity.QuestionData;
+import com.ectrvia.trivia.model.Answer;
+import com.ectrvia.trivia.model.Question;
+import com.ectrvia.trivia.repository.AnswerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

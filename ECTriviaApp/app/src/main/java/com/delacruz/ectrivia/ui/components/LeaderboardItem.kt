@@ -1,4 +1,4 @@
-package com.delacruz.ectrivia.ui.components
+package com.ectrvia.ectrivia.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.delacruz.ectrivia.data.model.LeaderboardEntry
-import com.delacruz.ectrivia.ui.theme.*
+import com.ectrvia.ectrivia.data.model.LeaderboardEntry
+import com.ectrvia.ectrivia.ui.theme.*
 
 @Composable
 fun LeaderboardItem(
