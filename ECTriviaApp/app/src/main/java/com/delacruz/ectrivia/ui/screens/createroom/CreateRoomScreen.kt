@@ -65,7 +65,7 @@ fun CreateRoomScreen(
                 .background(ECTriviaBackground)
                 .padding(padding)
         ) {
-            if (uiState.isLoading) {
+                if (uiState.isLoading) {
                 LoadingIndicator()
             } else {
                 Column(
@@ -90,40 +90,11 @@ fun CreateRoomScreen(
 
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    // Question Mode Toggle
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(
-                            text = "Use Theme Questions",
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = TextPrimary,
-                            modifier = Modifier.weight(1f)
-                        )
-                        Switch(
-                            checked = uiState.isThemeBased,
-                            onCheckedChange = { viewModel.toggleThemeBased() },
-                            colors = SwitchDefaults.colors(
-                                checkedThumbColor = ECTriviaPrimary,
-                                checkedTrackColor = ECTriviaPrimary.copy(alpha = 0.5f)
-                            )
-                        )
-                    }
-
-                    if (uiState.isThemeBased) {
-                        Text(
-                            text = "You'll play as a regular player with premade questions",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = TextSecondary
-                        )
-                    } else {
-                        Text(
-                            text = "You'll create custom questions and watch players compete",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = TextSecondary
-                        )
-                    }
+                    Text(
+                        text = "Theme mode is enabled by default",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = TextSecondary
+                    )
 
                     Spacer(modifier = Modifier.height(24.dp))
 
@@ -146,26 +117,13 @@ fun CreateRoomScreen(
 
                     Spacer(modifier = Modifier.weight(1f))
 
-                    // Corrected Logic: Only show "Create Room" directly if it's NOT theme-based (Custom Mode).
-                    // If it IS theme-based, we must go to "Select Theme" first.
-                    // The ViewModel's createRoom() should ONLY be called for Custom mode here, 
-                    // or after theme selection.
-                    
-                    if (uiState.isThemeBased) {
-                         ECTriviaButton(
-                            text = "Select Theme",
-                            onClick = { 
-                                onThemeSelected(uiState.hostNickname, uiState.timerSeconds)
-                            },
-                            enabled = uiState.hostNickname.isNotBlank()
-                        )
-                    } else {
-                        ECTriviaButton(
-                            text = "Create Room",
-                            onClick = { viewModel.createRoom() },
-                            enabled = uiState.hostNickname.isNotBlank()
-                        )
-                    }
+                    ECTriviaButton(
+                        text = "Select Theme",
+                        onClick = {
+                            onThemeSelected(uiState.hostNickname, uiState.timerSeconds)
+                        },
+                        enabled = uiState.hostNickname.isNotBlank()
+                    )
                 }
             }
 

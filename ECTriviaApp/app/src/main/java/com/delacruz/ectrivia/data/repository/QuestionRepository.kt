@@ -33,6 +33,56 @@ class QuestionRepository @Inject constructor(
         }
     }
 
+    suspend fun getAllCategoryQuestions(categoryId: Long): NetworkResult<List<Question>> {
+        return when (val result = safeApiCall { apiService.getCategoryQuestions(categoryId, null) }) {
+            is NetworkResult.Success -> NetworkResult.Success(result.data.map { it.toDomain() })
+            is NetworkResult.Error -> result
+            is NetworkResult.Loading -> result
+        }
+    }
+
+    suspend fun createCategory(name: String, description: String): NetworkResult<Category> {
+        return when (val result = safeApiCall { apiService.createCategory(CreateCategoryRequest(name, description)) }) {
+            is NetworkResult.Success -> NetworkResult.Success(result.data.toDomain())
+            is NetworkResult.Error -> result
+            is NetworkResult.Loading -> result
+        }
+    }
+
+    suspend fun deleteCategory(categoryId: Long): NetworkResult<Unit> {
+        return safeApiCall {
+            apiService.deleteCategory(categoryId)
+        }
+    }
+
+    suspend fun addQuestionToCategory(
+        categoryId: Long,
+        question: QuestionInput
+    ): NetworkResult<AddQuestionsResponse> {
+        return safeApiCall {
+            apiService.addCategoryQuestions(
+                categoryId,
+                AddQuestionsRequest(listOf(question.toDto()))
+            )
+        }
+    }
+
+    suspend fun deleteCategoryQuestion(categoryId: Long, questionId: Long): NetworkResult<Unit> {
+        return safeApiCall {
+            apiService.deleteCategoryQuestion(categoryId, questionId)
+        }
+    }
+
+    suspend fun updateCategoryQuestion(
+        categoryId: Long,
+        questionId: Long,
+        question: QuestionInput
+    ): NetworkResult<Unit> {
+        return safeApiCall {
+            apiService.updateCategoryQuestion(categoryId, questionId, question.toDto())
+        }
+    }
+
     suspend fun addQuestions(
         roomCode: String,
         questions: List<QuestionInput>
@@ -88,6 +138,7 @@ class QuestionRepository @Inject constructor(
             )
         },
         questionOrder = questionOrder,
+        correctAnswerIndex = correctAnswerIndex ?: 0,
         timerSeconds = timerSeconds ?: 15
     )
 

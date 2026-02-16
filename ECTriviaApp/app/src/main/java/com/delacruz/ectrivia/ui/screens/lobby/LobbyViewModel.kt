@@ -65,7 +65,7 @@ class LobbyViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 roomRepository.playerEvents.collect { event ->
-                    // Guard against null event or null player in event (though DTO should enforce it)
+                    // Event null guard
                     if (event == null || event.player == null) return@collect
                     
                     when (event.eventType) {
@@ -88,10 +88,10 @@ class LobbyViewModel @Inject constructor(
                             }
                         }
                         "PLAYER_LEFT" -> {
-                            // FIX: Ensure player exists before trying to filter
+                            // Player removal
                             _uiState.update {
-                                 val updatedList = it.players.filter { p -> p.id != event.player.id }
-                                 it.copy(players = updatedList)
+                                  val updatedList = it.players.filter { p -> p.id != event.player.id }
+                                  it.copy(players = updatedList)
                             }
                         }
                         "GAME_STARTING" -> {
@@ -100,7 +100,7 @@ class LobbyViewModel @Inject constructor(
                     }
                 }
             } catch (e: Exception) {
-                // Log the error or handle it quietly to prevent crash
+                // Stream error handling
                 _uiState.update { it.copy(error = "Connection update error: ${e.localizedMessage}") }
             }
         }

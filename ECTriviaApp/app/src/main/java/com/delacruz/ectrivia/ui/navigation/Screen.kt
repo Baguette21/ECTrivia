@@ -6,6 +6,7 @@ sealed class Screen(val route: String) {
     data object ThemeSelector : Screen("theme_selector/{nickname}/{timerSeconds}") {
         fun createRoute(nickname: String, timerSeconds: Int) = "theme_selector/$nickname/$timerSeconds"
     }
+    data object CategoryManager : Screen("category_manager")
     data object QuestionEditor : Screen("question_editor/{roomCode}/{playerId}/{isHost}") {
         fun createRoute(roomCode: String, playerId: Long, isHost: Boolean) =
             "question_editor/$roomCode/$playerId/$isHost"

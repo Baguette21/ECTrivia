@@ -27,10 +27,6 @@ class CreateRoomViewModel @Inject constructor(
         }
     }
 
-    fun toggleThemeBased() {
-        _uiState.update { it.copy(isThemeBased = !it.isThemeBased) }
-    }
-
     fun updateTimer(seconds: Int) {
         _uiState.update { it.copy(timerSeconds = seconds) }
     }
@@ -87,7 +83,7 @@ class CreateRoomViewModel @Inject constructor(
 
 data class CreateRoomUiState(
     val hostNickname: String = "",
-    val isThemeBased: Boolean = false,
+    val isThemeBased: Boolean = true,
     val timerSeconds: Int = Constants.DEFAULT_TIMER_SECONDS,
     val isLoading: Boolean = false,
     val roomCreated: Boolean = false,

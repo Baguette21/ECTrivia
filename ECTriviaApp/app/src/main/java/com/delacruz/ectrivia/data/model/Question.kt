@@ -5,6 +5,7 @@ data class Question(
     val questionText: String,
     val answers: List<Answer>,
     val questionOrder: Int,
+    val correctAnswerIndex: Int = 0,
     val timerSeconds: Int
 )
 

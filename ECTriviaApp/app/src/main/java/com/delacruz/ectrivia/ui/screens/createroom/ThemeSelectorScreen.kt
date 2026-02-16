@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -27,6 +28,7 @@ fun ThemeSelectorScreen(
     nickname: String,
     timerSeconds: Int,
     onNavigateBack: () -> Unit,
+    onManageCategories: () -> Unit,
     onCategorySelected: (String, Long, Boolean) -> Unit,
     viewModel: ThemeSelectorViewModel = hiltViewModel()
 ) {
@@ -58,7 +60,16 @@ fun ThemeSelectorScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = ECTriviaBackground
-                )
+                ),
+                actions = {
+                    IconButton(onClick = onManageCategories) {
+                        Icon(
+                            Icons.Default.Edit,
+                            contentDescription = "Manage Categories",
+                            tint = TextPrimary
+                        )
+                    }
+                }
             )
         }
     ) { padding ->

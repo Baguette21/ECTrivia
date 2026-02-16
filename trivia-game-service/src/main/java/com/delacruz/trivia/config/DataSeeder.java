@@ -116,7 +116,7 @@ public class DataSeeder implements CommandLineRunner {
             )
         );
 
-        // Additional placeholder categories
+        // Additional categories
         createCategory("Sports", "Athletic competitions, teams, and famous athletes");
         createCategory("Video Games", "Gaming history, characters, and franchises");
         createCategory("History", "World events, historical figures, and civilizations");

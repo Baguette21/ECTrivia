@@ -6,9 +6,15 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> Response<T>): NetworkResult<T
     return try {
         val response = apiCall()
         if (response.isSuccessful) {
-            response.body()?.let {
-                NetworkResult.Success(it)
-            } ?: NetworkResult.Error("Empty response body")
+            val body = response.body()
+            if (body != null) {
+                NetworkResult.Success(body)
+            } else if (response.code() == 204) {
+                @Suppress("UNCHECKED_CAST")
+                NetworkResult.Success(Unit as T)
+            } else {
+                NetworkResult.Error("Empty response body")
+            }
         } else {
             NetworkResult.Error(response.message(), response.code())
         }

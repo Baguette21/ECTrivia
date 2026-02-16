@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.delacruz.ectrivia.ui.screens.createroom.CreateRoomScreen
+import com.delacruz.ectrivia.ui.screens.createroom.CategoryManagerScreen
 import com.delacruz.ectrivia.ui.screens.createroom.QuestionEditorScreen
 import com.delacruz.ectrivia.ui.screens.createroom.QuestionListScreen
 import com.delacruz.ectrivia.ui.screens.createroom.ThemeSelectorScreen
@@ -65,11 +66,18 @@ fun ECTriviaNavGraph() {
                 nickname = nickname,
                 timerSeconds = timerSeconds,
                 onNavigateBack = { navController.popBackStack() },
+                onManageCategories = { navController.navigate(Screen.CategoryManager.route) },
                 onCategorySelected = { roomCode, playerId, isHost ->
                     navController.navigate(Screen.Lobby.createRoute(roomCode, playerId, isHost)) {
                         popUpTo(Screen.Home.route)
                     }
                 }
+            )
+        }
+
+        composable(Screen.CategoryManager.route) {
+            CategoryManagerScreen(
+                onNavigateBack = { navController.popBackStack() }
             )
         }
 

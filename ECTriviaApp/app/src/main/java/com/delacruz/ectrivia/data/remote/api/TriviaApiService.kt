@@ -38,8 +38,33 @@ interface TriviaApiService {
     @GET("api/categories/{categoryId}/questions")
     suspend fun getCategoryQuestions(
         @Path("categoryId") categoryId: Long,
-        @Query("limit") limit: Int = 10
+        @Query("limit") limit: Int? = null
     ): Response<List<QuestionDto>>
+
+    @POST("api/categories")
+    suspend fun createCategory(@Body request: CreateCategoryRequest): Response<CategoryDto>
+
+    @DELETE("api/categories/{categoryId}")
+    suspend fun deleteCategory(@Path("categoryId") categoryId: Long): Response<Unit>
+
+    @POST("api/categories/{categoryId}/questions")
+    suspend fun addCategoryQuestions(
+        @Path("categoryId") categoryId: Long,
+        @Body request: AddQuestionsRequest
+    ): Response<AddQuestionsResponse>
+
+    @DELETE("api/categories/{categoryId}/questions/{questionId}")
+    suspend fun deleteCategoryQuestion(
+        @Path("categoryId") categoryId: Long,
+        @Path("questionId") questionId: Long
+    ): Response<Unit>
+
+    @PUT("api/categories/{categoryId}/questions/{questionId}")
+    suspend fun updateCategoryQuestion(
+        @Path("categoryId") categoryId: Long,
+        @Path("questionId") questionId: Long,
+        @Body request: QuestionInputDto
+    ): Response<Unit>
 
     // Question endpoints
     @POST("api/rooms/{roomCode}/questions")

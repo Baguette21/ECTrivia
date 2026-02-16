@@ -42,7 +42,7 @@ public class GameController {
             PlayerAnswer result = scoreService.submitAnswer(
                     roomCode.toUpperCase(), playerId, questionId, selectedAnswerIndex, answerTimeMs);
 
-            // Fetch updated player to get actual total score
+            // Player score lookup
             PlayerData player = playerRepository.findById(playerId)
                     .orElseThrow(() -> new IllegalArgumentException("Player not found"));
 

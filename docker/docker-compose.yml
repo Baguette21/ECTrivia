@@ -1,4 +1,4 @@
-version: '3.8'
+name: ectrivia
 
 services:
   # MySQL Database
@@ -11,10 +11,10 @@ services:
       MYSQL_USER: ectrivia
       MYSQL_PASSWORD: ectrivia123
     ports:
-      - "3306:3306"
+      - "${MYSQL_HOST_PORT:-3307}:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      # Init script is likely baked into the image now, but keeping the mount ensures consistency if file changes
+      # Init script mount
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
@@ -24,35 +24,27 @@ services:
     networks:
       - ectrivia-network
 
-  # Zookeeper (required for Kafka)
-  zookeeper:
-    image: baguette21/ectrivia-zookeeper:latest
-    container_name: ectrivia-zookeeper
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
-    ports:
-      - "2181:2181"
-    networks:
-      - ectrivia-network
-
-  # Apache Kafka
+  # Apache Kafka (KRaft mode)
   kafka:
-    image: baguette21/ectrivia-kafka:latest
+    image: apache/kafka:3.9.1
     container_name: ectrivia-kafka
-    depends_on:
-      - zookeeper
     environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:29093
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENERS: PLAINTEXT://kafka:29092,CONTROLLER://kafka:29093,PLAINTEXT_HOST://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:${KAFKA_HOST_PORT:-9094}
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
     ports:
-      - "9092:9092"
-      - "29092:29092"
+      - "${KAFKA_HOST_PORT:-9094}:9092"
     networks:
       - ectrivia-network
 
@@ -66,7 +58,7 @@ services:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
     ports:
-      - "8080:8080"
+      - "${KAFKA_UI_HOST_PORT:-8080}:8080"
     networks:
       - ectrivia-network
 

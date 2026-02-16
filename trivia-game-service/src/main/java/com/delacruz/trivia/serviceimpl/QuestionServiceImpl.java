@@ -96,6 +96,77 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     @Transactional
+    public Question addQuestionToCategory(Long categoryId, String questionText, List<String> answers,
+                                          Integer correctIndex, Integer timerSeconds) {
+        CategoryData categoryData = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new IllegalArgumentException("Category not found"));
+
+        if (answers == null || answers.size() < 2) {
+            throw new IllegalArgumentException("At least 2 answers are required");
+        }
+        if (correctIndex == null || correctIndex < 0 || correctIndex >= answers.size()) {
+            throw new IllegalArgumentException("Correct answer index is out of range");
+        }
+
+        int questionOrder = questionRepository.countByCategoryId(categoryData.getId()) + 1;
+
+        QuestionData questionData = new QuestionData();
+        questionData.setCategory(categoryData);
+        questionData.setQuestionText(questionText);
+        questionData.setQuestionOrder(questionOrder);
+        questionData.setCorrectAnswerIndex(correctIndex);
+        questionData.setTimerSeconds(timerSeconds != null ? timerSeconds : 15);
+        questionData = questionRepository.save(questionData);
+
+        for (int i = 0; i < answers.size(); i++) {
+            AnswerData answerData = new AnswerData();
+            answerData.setQuestion(questionData);
+            answerData.setAnswerText(answers.get(i));
+            answerData.setAnswerIndex(i);
+            answerRepository.save(answerData);
+        }
+
+        logger.info("Added question to category {}: {}", categoryId, questionText);
+        return transformQuestionService.transform(questionData);
+    }
+
+    @Override
+    @Transactional
+    public Question updateCategoryQuestion(Long categoryId, Long questionId, String questionText,
+                                           List<String> answers, Integer correctIndex, Integer timerSeconds) {
+        QuestionData questionData = questionRepository.findById(questionId)
+                .orElseThrow(() -> new IllegalArgumentException("Question not found"));
+
+        if (questionData.getCategory() == null || !questionData.getCategory().getId().equals(categoryId)) {
+            throw new IllegalArgumentException("Question does not belong to this category");
+        }
+        if (answers == null || answers.size() < 2) {
+            throw new IllegalArgumentException("At least 2 answers are required");
+        }
+        if (correctIndex == null || correctIndex < 0 || correctIndex >= answers.size()) {
+            throw new IllegalArgumentException("Correct answer index is out of range");
+        }
+
+        questionData.setQuestionText(questionText);
+        questionData.setCorrectAnswerIndex(correctIndex);
+        questionData.setTimerSeconds(timerSeconds != null ? timerSeconds : 15);
+        questionData = questionRepository.save(questionData);
+
+        answerRepository.deleteByQuestionId(questionId);
+        for (int i = 0; i < answers.size(); i++) {
+            AnswerData answerData = new AnswerData();
+            answerData.setQuestion(questionData);
+            answerData.setAnswerText(answers.get(i));
+            answerData.setAnswerIndex(i);
+            answerRepository.save(answerData);
+        }
+
+        logger.info("Updated question {} in category {}", questionId, categoryId);
+        return transformQuestionService.transform(questionData);
+    }
+
+    @Override
+    @Transactional
     public Question updateQuestion(String roomCode, Long questionId, String questionText, 
                                     List<String> answers, Integer correctIndex, Integer timerSeconds) {
         QuestionData questionData = questionRepository.findById(questionId)
@@ -125,6 +196,21 @@ public class QuestionServiceImpl implements QuestionService {
         answerRepository.deleteByQuestionId(questionId);
         questionRepository.deleteById(questionId);
         logger.info("Deleted question {} from room {}", questionId, roomCode);
+    }
+
+    @Override
+    @Transactional
+    public void deleteCategoryQuestion(Long categoryId, Long questionId) {
+        QuestionData questionData = questionRepository.findById(questionId)
+                .orElseThrow(() -> new IllegalArgumentException("Question not found"));
+
+        if (questionData.getCategory() == null || !questionData.getCategory().getId().equals(categoryId)) {
+            throw new IllegalArgumentException("Question does not belong to this category");
+        }
+
+        answerRepository.deleteByQuestionId(questionId);
+        questionRepository.deleteById(questionId);
+        logger.info("Deleted question {} from category {}", questionId, categoryId);
     }
 
     @Override

@@ -8,3 +8,8 @@ data class CategoryDto(
     @SerializedName("description") val description: String,
     @SerializedName("questionCount") val questionCount: Int?
 )
+
+data class CreateCategoryRequest(
+    @SerializedName("name") val name: String,
+    @SerializedName("description") val description: String
+)

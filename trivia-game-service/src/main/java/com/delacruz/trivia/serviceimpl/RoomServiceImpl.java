@@ -121,12 +121,12 @@ public class RoomServiceImpl implements RoomService {
             roomRepository.save(roomData);
         }
 
-        // Must reload player to ensure relationships are set for transformation
+        // Player reload
         playerData = playerRepository.findById(playerData.getId()).orElseThrow();
 
         Player player = transformPlayerService.transform(playerData);
 
-        // Broadcast player joined event (Kafka)
+        // Kafka player joined event
         Map<String, Object> joinPayload = Map.of("player", player, "totalPlayers", playerCount + 1);
         gameEventProducer.publishGameEvent(
                 roomCode,
@@ -135,14 +135,12 @@ public class RoomServiceImpl implements RoomService {
                 joinPayload
         );
 
-        // Direct WebSocket broadcast (bypass Kafka for testing/reliability)
-        // CRITICAL FIX: Structure must match Android PlayerEventDto exactly
-        // PlayerEventDto expects "player" at top level, not inside "payload"
+        // WebSocket player joined event
         Map<String, Object> wsPayload = new HashMap<>();
         wsPayload.put("eventId", UUID.randomUUID().toString());
         wsPayload.put("eventType", "PLAYER_JOINED");
         wsPayload.put("roomCode", roomCode);
-        wsPayload.put("player", player); // Top level player object
+        wsPayload.put("player", player);
         wsPayload.put("serverTimestamp", System.currentTimeMillis());
         
         webSocketHandler.broadcastPlayerEvent(roomCode, wsPayload);
@@ -164,7 +162,7 @@ public class RoomServiceImpl implements RoomService {
 
         playerRepository.delete(playerData);
 
-        // If host left, promote next player
+        // Host promotion
         if (wasHost) {
             PlayerData newHost = playerRepository.findFirstByRoomIdAndIsHostFalseOrderByJoinOrderAsc(roomData.getId())
                     .orElse(null);
@@ -199,18 +197,18 @@ public class RoomServiceImpl implements RoomService {
                 leavePayload
         );
 
-        // Direct WebSocket broadcast for LEAVE
+        // WebSocket player left event
         Map<String, Object> wsLeavePayload = new HashMap<>();
         wsLeavePayload.put("eventId", UUID.randomUUID().toString());
         wsLeavePayload.put("eventType", "PLAYER_LEFT");
         wsLeavePayload.put("roomCode", roomCode);
         wsLeavePayload.put("serverTimestamp", System.currentTimeMillis());
 
-        // Construct a partial player map because Android expects a "player" object
+        // Player payload
         Map<String, Object> partialPlayer = new HashMap<>();
         partialPlayer.put("id", playerId);
         partialPlayer.put("nickname", nickname);
-        partialPlayer.put("isHost", wasHost); // Retain original status for info
+        partialPlayer.put("isHost", wasHost);
         partialPlayer.put("isProxyHost", false);
         partialPlayer.put("totalScore", 0);
         partialPlayer.put("currentStreak", 0);
@@ -252,12 +250,9 @@ public class RoomServiceImpl implements RoomService {
         wsPayload.put("roomCode", roomCode);
         wsPayload.put("timerSeconds", roomData.getQuestionTimerSeconds());
         wsPayload.put("serverTimestamp", System.currentTimeMillis());
-        // Android GameStateDto might optionally check payload, but timerSeconds is top level there too? 
-        // Let's check GameStateDto again. It has top level timerSeconds.
-        
         webSocketHandler.broadcastGameEvent(roomCode, wsPayload);
 
-        // Start the game timer scheduler to manage question timing
+        // Game timer start
         try {
             gameTimerScheduler.startGame(roomCode);
         } catch (Exception e) {

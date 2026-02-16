@@ -7,6 +7,7 @@ data class QuestionDto(
     @SerializedName("questionText") val questionText: String,
     @SerializedName("answers") val answers: List<AnswerDto?>,
     @SerializedName("questionOrder") val questionOrder: Int,
+    @SerializedName("correctAnswerIndex") val correctAnswerIndex: Int?,
     @SerializedName("timerSeconds") val timerSeconds: Int?
 )
 
