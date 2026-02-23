@@ -2,6 +2,7 @@ package com.ectrvia.ectrivia.ui.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -12,30 +13,30 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = ECTriviaPrimary,
-    secondary = ECTriviaSecondary,
-    tertiary = Pink80,
-    background = ECTriviaBackground,
-    surface = ECTriviaSurface,
-    surfaceVariant = ECTriviaSurfaceVariant,
-    onPrimary = TextPrimary,
-    onSecondary = TextPrimary,
-    onTertiary = TextPrimary,
-    onBackground = TextPrimary,
-    onSurface = TextPrimary,
-    onSurfaceVariant = TextSecondary
+    primary = Color(0xFFE0E0E0),
+    secondary = Color(0xFFA0A0A0),
+    tertiary = Color(0xFF888888),
+    background = Color(0xFF121212),
+    surface = Color(0xFF1E1E1E),
+    surfaceVariant = Color(0xFF2C2C2C),
+    onPrimary = Color(0xFF000000),
+    onSecondary = Color(0xFF000000),
+    onTertiary = Color(0xFF000000),
+    onBackground = Color(0xFFE0E0E0),
+    onSurface = Color(0xFFE0E0E0),
+    onSurfaceVariant = Color(0xFFA0A0A0)
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40,
+    primary = ECTriviaPrimary,
+    secondary = ECTriviaSecondary,
+    tertiary = AnswerBlue,
     background = ECTriviaBackground,
     surface = ECTriviaSurface,
     surfaceVariant = ECTriviaSurfaceVariant,
-    onPrimary = TextPrimary,
-    onSecondary = TextPrimary,
-    onTertiary = TextPrimary,
+    onPrimary = Color.White,
+    onSecondary = Color.White,
+    onTertiary = Color.White,
     onBackground = TextPrimary,
     onSurface = TextPrimary,
     onSurfaceVariant = TextSecondary
@@ -43,7 +44,7 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun ECTriviaTheme(
-    darkTheme: Boolean = true, // Default to dark theme for game experience
+    darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme

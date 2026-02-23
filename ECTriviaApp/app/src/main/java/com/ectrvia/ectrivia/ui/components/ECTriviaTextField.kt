@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -43,7 +44,7 @@ fun ECTriviaTextField(
         placeholder = { Text(placeholder, color = TextSecondary) },
         isError = isError,
         supportingText = if (isError && errorMessage != null) {
-            { Text(errorMessage, color = Color.Red) }
+            { Text(errorMessage, color = MaterialTheme.colorScheme.error) }
         } else null,
         keyboardOptions = KeyboardOptions(
             keyboardType = keyboardType,
@@ -64,6 +65,8 @@ fun ECTriviaTextField(
             focusedLabelColor = ECTriviaPrimary,
             unfocusedLabelColor = TextSecondary,
             cursorColor = ECTriviaPrimary,
+            focusedContainerColor = Color.White,
+            unfocusedContainerColor = Color.White,
             focusedTextColor = TextPrimary,
             unfocusedTextColor = TextPrimary
         )

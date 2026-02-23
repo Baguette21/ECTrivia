@@ -43,6 +43,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ectrvia.ectrivia.ui.components.ECTriviaButton
@@ -288,11 +289,11 @@ private fun EditQuestionDialog(
                                 Icon(
                                     imageVector = Icons.Default.Check,
                                     contentDescription = "Correct",
-                                    tint = TextPrimary,
+                                    tint = Color.White,
                                     modifier = Modifier.size(18.dp)
                                 )
                             } else {
-                                Text(text = ('A' + index).toString(), color = TextPrimary)
+                                Text(text = ('A' + index).toString(), color = Color.White)
                             }
                         }
                         Spacer(modifier = Modifier.width(8.dp))
@@ -379,11 +380,11 @@ private fun CategoryQuestionCreateCard(
                             Icon(
                                 imageVector = Icons.Default.Check,
                                 contentDescription = "Correct",
-                                tint = TextPrimary,
+                                tint = Color.White,
                                 modifier = Modifier.size(18.dp)
                             )
                         } else {
-                            Text(text = ('A' + index).toString(), color = TextPrimary)
+                            Text(text = ('A' + index).toString(), color = Color.White)
                         }
                     }
                     Spacer(modifier = Modifier.width(8.dp))

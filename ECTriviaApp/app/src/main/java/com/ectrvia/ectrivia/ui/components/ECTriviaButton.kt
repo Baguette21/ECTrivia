@@ -3,6 +3,7 @@ package com.ectrvia.ectrivia.ui.components
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -12,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.ectrvia.ectrivia.ui.theme.ECTriviaPrimary
-import com.ectrvia.ectrivia.ui.theme.ECTriviaSecondary
 
 @Composable
 fun ECTriviaButton(
@@ -22,6 +22,9 @@ fun ECTriviaButton(
     enabled: Boolean = true,
     isPrimary: Boolean = true
 ) {
+    val containerColor = if (isPrimary) ECTriviaPrimary else Color.White
+    val contentColor = if (isPrimary) Color.White else ECTriviaPrimary
+
     Button(
         onClick = onClick,
         modifier = modifier
@@ -29,9 +32,10 @@ fun ECTriviaButton(
             .height(56.dp),
         enabled = enabled,
         shape = RoundedCornerShape(12.dp),
+        border = if (isPrimary) null else BorderStroke(1.dp, ECTriviaPrimary.copy(alpha = 0.45f)),
         colors = ButtonDefaults.buttonColors(
-            containerColor = if (isPrimary) ECTriviaPrimary else ECTriviaSecondary,
-            contentColor = Color.White,
+            containerColor = containerColor,
+            contentColor = contentColor,
             disabledContainerColor = Color.Gray.copy(alpha = 0.5f),
             disabledContentColor = Color.White.copy(alpha = 0.5f)
         )

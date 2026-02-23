@@ -13,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -164,14 +165,14 @@ fun AnswerInputRow(
                 Icon(
                     Icons.Default.Check,
                     contentDescription = "Correct",
-                    tint = TextPrimary,
+                    tint = Color.White,
                     modifier = Modifier.size(20.dp)
                 )
             } else {
                 Text(
                     text = ('A' + index).toString(),
                     style = MaterialTheme.typography.titleMedium,
-                    color = TextPrimary
+                    color = Color.White
                 )
             }
         }

@@ -114,7 +114,7 @@ fun CategoryCard(
     category: Category,
     onClick: () -> Unit
 ) {
-    val colors = listOf(AnswerRed, AnswerBlue, AnswerYellow, AnswerGreen, ECTriviaPrimary, ECTriviaSecondary)
+    val colors = listOf(AnswerRed, AnswerBlue, AnswerYellow, AnswerGreen, StreakOrange, ECTriviaSecondary)
     val colorIndex = category.id.toInt() % colors.size
     
     Box(
