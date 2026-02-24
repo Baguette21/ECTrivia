@@ -121,6 +121,11 @@ class LobbyViewModel @Inject constructor(
     }
 
     fun startGame() {
+        _uiState.update {
+            it.copy(error = "    ")
+        }
+        return
+
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
 

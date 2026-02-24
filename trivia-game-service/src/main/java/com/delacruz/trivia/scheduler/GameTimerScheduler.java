@@ -108,9 +108,16 @@ public class GameTimerScheduler {
         
         QuestionData currentQuestion = questions.get(questionIndex);
         int totalQuestions = questions.size();
-        int timerSeconds = currentQuestion.getTimerSeconds() != null 
-                ? currentQuestion.getTimerSeconds() 
-                : room.getQuestionTimerSeconds();
+        int timerSeconds;
+        if (Boolean.TRUE.equals(room.getIsThemeBased())) {
+            timerSeconds = room.getQuestionTimerSeconds() != null
+                    ? room.getQuestionTimerSeconds()
+                    : 15;
+        } else {
+            timerSeconds = currentQuestion.getTimerSeconds() != null
+                    ? currentQuestion.getTimerSeconds()
+                    : (room.getQuestionTimerSeconds() != null ? room.getQuestionTimerSeconds() : 15);
+        }
         
         // Transform question for clients (without correct answer)
         Question questionForClients = transformQuestionService.transform(currentQuestion);

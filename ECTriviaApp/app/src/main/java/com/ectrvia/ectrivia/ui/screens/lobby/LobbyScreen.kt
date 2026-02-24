@@ -132,9 +132,16 @@ fun LobbyScreen(
 
                     if (isHost) {
                         ECTriviaButton(
-                            text = "Start Game",
+                            text = "Start Game ",
                             onClick = { viewModel.startGame() },
-                            enabled = uiState.players.size >= 1 // At least host
+                            enabled = true
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = " ",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = TextMuted,
+                            textAlign = TextAlign.Center
                         )
                     } else {
                         Text(
